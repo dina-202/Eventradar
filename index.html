@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="EventRadar is a lightweight UK event discovery demo for finding music, nightlife, festival, comedy and culture events by city, date and category." />
+  <meta name="theme-color" content="#08111f" />
+  <title>EventRadar — Discover events across the UK</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="EventRadar home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>EventRadar</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#discover">Discover</a>
+      <a href="#about">About</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">UK EVENT DISCOVERY</p>
+        <h1 id="hero-title">Find something worth <span>going out for.</span></h1>
+        <p class="hero-text">Explore music, nightlife, festivals, comedy and culture across the UK. Filter by city, date and category in seconds.</p>
+        <a class="primary-button" href="#discover">Explore demo events <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="radar-wrap" aria-hidden="true">
+        <div class="radar">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="sweep"></div>
+          <span class="blip b1"></span>
+          <span class="blip b2"></span>
+          <span class="blip b3"></span>
+          <span class="blip b4"></span>
+          <div class="radar-core"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Project features">
+      <div><strong>UK-wide</strong><span>City discovery</span></div>
+      <div><strong>5 categories</strong><span>Simple filtering</span></div>
+      <div><strong>Fast</strong><span>No account required</span></div>
+      <div><strong>Skiddle</strong><span>API integration planned</span></div>
+    </section>
+
+    <section class="discover-section" id="discover" aria-labelledby="discover-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DISCOVER</p>
+          <h2 id="discover-title">What’s happening?</h2>
+        </div>
+        <p>Demo listings are shown while API access is pending.</p>
+      </div>
+
+      <form class="filter-panel" id="filters" autocomplete="off">
+        <label>
+          <span>City</span>
+          <select id="cityFilter">
+            <option value="all">All UK cities</option>
+          </select>
+        </label>
+        <label>
+          <span>Category</span>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
+        <label>
+          <span>When</span>
+          <select id="dateFilter">
+            <option value="all">Any date</option>
+            <option value="7">Next 7 days</option>
+            <option value="30">Next 30 days</option>
+          </select>
+        </label>
+        <label class="search-field">
+          <span>Search</span>
+          <input id="searchFilter" type="search" placeholder="Event or venue" />
+        </label>
+      </form>
+
+      <div class="results-bar">
+        <span id="resultCount">0 demo events</span>
+        <button class="text-button" id="resetFilters" type="button">Reset filters</button>
+      </div>
+
+      <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>No demo events match those filters.</h3>
+        <p>Try another city, category or date range.</p>
+      </div>
+    </section>
+
+    <section class="source-card" aria-label="Data source">
+      <div class="source-icon" aria-hidden="true">S</div>
+      <div>
+        <p class="eyebrow">DATA SOURCE</p>
+        <h2>Built for the Skiddle Events API</h2>
+        <p>EventRadar is an independent, non-commercial event-discovery demo. After API approval, live event, venue and artist information will be retrieved from Skiddle and each live listing will link back to its corresponding Skiddle event page.</p>
+      </div>
+      <span class="api-status">API access pending</span>
+    </section>
+
+    <section class="about-section" id="about">
+      <div>
+        <p class="eyebrow">ABOUT EVENTRADAR</p>
+        <h2>A focused event discovery experience.</h2>
+      </div>
+      <div class="about-copy">
+        <p>EventRadar is designed to make browsing UK events quick and uncomplicated. The project is intentionally lightweight: discover events, narrow the results and continue to the official event source.</p>
+        <p>It does not sell tickets, process payments or provide a competing ticketing service. Once connected, Skiddle will be credited as the event data source and users will be directed to Skiddle for the relevant event listing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>EventRadar</span>
+    </div>
+    <p>Independent non-commercial demo · UK event discovery</p>
+    <p>© <span id="year"></span> EventRadar</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
